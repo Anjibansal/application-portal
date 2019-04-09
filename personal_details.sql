@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2019 at 04:42 PM
+-- Generation Time: Apr 09, 2019 at 03:45 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.27
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `application portal`
+-- Database: `application-portal`
 --
 
 -- --------------------------------------------------------
@@ -33,15 +33,16 @@ CREATE TABLE `personal_details` (
   `Father's Name` varchar(150) NOT NULL,
   `Mother's Name` varchar(150) NOT NULL,
   `Date of birth` date NOT NULL,
-  `Gender` text NOT NULL,
+  `Gender` varchar(6) NOT NULL DEFAULT 'Female',
   `Category` varchar(4) NOT NULL,
-  `Natonality` text NOT NULL,
-  `Conatct Number` bigint(10) NOT NULL,
+  `Natonality` varchar(6) NOT NULL DEFAULT 'Indian',
+  `Conatct Number` bigint(10) UNSIGNED NOT NULL,
+  `Alternate Contact number` bigint(10) UNSIGNED NOT NULL,
   `Email-id` varchar(320) NOT NULL,
   `Address` varchar(300) NOT NULL,
   `City` varchar(100) NOT NULL,
   `State` varchar(100) NOT NULL,
-  `Pincode` int(6) NOT NULL
+  `Pincode` int(6) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
