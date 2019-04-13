@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2019 at 05:01 PM
+-- Generation Time: Apr 13, 2019 at 10:07 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.27
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `application portal`
+-- Database: `application-portal`
 --
 
 -- --------------------------------------------------------
@@ -29,27 +29,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `educational_details` (
-  `10 Board` varchar(255) NOT NULL,
-  `10 Subjects` varchar(255) NOT NULL,
-  `10 Year of completion` year(4) NOT NULL,
-  `10 Percentage` tinyint(2) NOT NULL,
-  `12 Board` varchar(255) NOT NULL,
-  `12 Subjects` varchar(255) NOT NULL,
-  `12 Year of completion` year(4) NOT NULL,
-  `12 Percentage` tinyint(2) NOT NULL,
-  `UG University` varchar(255) NOT NULL,
-  `UG Subjects` varchar(255) NOT NULL,
-  `Year of graduation` year(4) NOT NULL,
+  `10_Board` varchar(255) NOT NULL,
+  `10_Subjects` varchar(255) NOT NULL,
+  `10_Passing_Year` year(4) NOT NULL,
+  `10_Percentage` tinyint(2) NOT NULL,
+  `12_Board` varchar(255) NOT NULL,
+  `12_Subjects` varchar(255) NOT NULL,
+  `12_Passing_Year` year(4) NOT NULL,
+  `12_Percentage` tinyint(2) NOT NULL,
+  `UG_University` varchar(255) NOT NULL,
+  `UG_Subjects` varchar(255) NOT NULL,
+  `UG_Graduation_Year` year(4) NOT NULL,
   `Gate` tinyint(1) NOT NULL,
-  `Roll no` int(11) DEFAULT NULL,
-  `Year` year(4) DEFAULT NULL,
-  `Paper` varchar(255) DEFAULT NULL,
-  `Score` int(11) DEFAULT NULL,
-  `Rank` int(11) DEFAULT NULL,
-  `Preference 1` varchar(255) NOT NULL,
-  `Preference 2` varchar(255) NOT NULL,
-  `Preference 3` varchar(255) NOT NULL,
-  `Preference 4` varchar(255) NOT NULL
+  `Gate_RollNo` int(11) DEFAULT NULL,
+  `Gate_Year` year(4) DEFAULT NULL,
+  `Gate_Paper_code` varchar(255) DEFAULT NULL,
+  `Gate_Score` int(11) DEFAULT NULL,
+  `Gate_Rank` int(11) DEFAULT NULL,
+  `Preference_1` varchar(255) NOT NULL,
+  `Preference_2` varchar(255) NOT NULL,
+  `Preference_3` varchar(255) NOT NULL,
+  `Preference_4` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 COMMIT;
 
