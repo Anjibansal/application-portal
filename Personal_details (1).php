@@ -1,7 +1,6 @@
 <?php
-include ('server.php');
+ include ('newserver.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,42 +17,48 @@ include ('server.php');
   <h2><center>Personal Details</center></h2>
   <br>
   <br>
-  <form class="form-horizontal" action="formEducationalDetails.php" method="post">
-  	<div class="form-group">
-      <label class="control-label col-sm-4" for="name">Name:</label>
+  <form class="form-horizontal" action="personaldetails.php" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="name">Name</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="name" placeholder="Enter full name" name="name" required>
+        <input type="text" class="form-control" id="name" placeholder="First and last name" name="name" required>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="fname">Father's Name:</label>
+      <label class="control-label col-sm-4" for="fname">Father's Name</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="fname" placeholder="Enter Father's name" name="fname">
+        <input type="text" class="form-control" id="fname" placeholder="Father's name" name="fname" required>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="mname">Mother's Name:</label>
+      <label class="control-label col-sm-4" for="mname">Mother's Name</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="mname" placeholder="Enter Mother's name" name="mname">
+        <input type="text" class="form-control" id="mname" placeholder="Mother's name" name="mname" required>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="bdate">Date of birth:</label>
+      <label class="control-label col-sm-4" for="bdate">Date of birth</label>
       <div class="col-sm-6">
-        <input type="date" class="form-control" id="bdate" name="bdate" required>
+        <input type="date" class="form-control" id="bdate" name="bdate" placeholder="dd-mm-yyyy" required>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="gender">Gender:</label>
+      <label class="control-label col-sm-4" for="gender">Gender</label>
       <div class="col-sm-6">
         <label><input type="radio" id="female" name="female" required>Female</label>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="category">Category:</label>
+      <label class="control-label col-sm-4" for="nation">Nationality</label>
+      <div class="col-sm-6">
+        <label><input type="radio" id="india" name="india" required>Indian</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="category">Category 1</label>
       <div class="col-sm-6">
         
-      <select class="form-control" id="sel1" name="category" required>
+      <select class="form-control" id="sel1" name="category1" required>
         <option>General</option>
         <option>SC/ST</option>
         <option>OBC</option>
@@ -62,34 +67,51 @@ include ('server.php');
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-4" for="nation">Nationality:</label>
+      <label class="control-label col-sm-4" for="category">Category 2</label>
       <div class="col-sm-6">
-        <label><input type="radio" id="india" name="india" required>Indian</label>
+        
+      <select class="form-control" id="sel1" name="category2" required>
+        <option>General</option>
+        <option>CW</option>
+        <option>PD</option>
+      </select>
+      
       </div>
     </div>
-	<div class="form-group">
-      <label class="control-label col-sm-4" for="mobile">Contact Number:</label>
+    
+  <div class="form-group">
+      <label class="control-label col-sm-4" for="mobile1">Contact Number</label>
       <div class="col-sm-6">
-        <input type="number" class="form-control" id="mobile" placeholder="Enter Contact Number" name="mobile" required>
+        <input type="number" class="form-control" id="mobile1" placeholder="9999999999" name="mobile1" required>
       </div>
     </div>
-   
-
     <div class="form-group">
-      <label class="control-label col-sm-4" for="address">Address:</label>
+      <label class="control-label col-sm-4" for="mobile2">Alternate Contact Number</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="street" placeholder="Street Name" name="street">
+        <input type="number" class="form-control" id="mobile2" placeholder="9999999999" name="mobile2" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="email">Email</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="email" placeholder="name@domain.com" name="email" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="address">Address</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="email" placeholder="Coressponding Address" name="address">
       </div>
       </div>
       
       <div class="form-group">
-      <label class="control-label col-sm-4"></label>
+      <label class="control-label col-sm-4">City</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="city" placeholder="City" name="city">
       </div>
       </div>
       <div class="form-group">
-      <label class="control-label col-sm-4"></label>
+      <label class="control-label col-sm-4">State</label>
       <div class="col-sm-6">
         <select class="form-control" id="state" name="state">
       <option value="">Select State</option>
@@ -133,7 +155,7 @@ include ('server.php');
       </div>
       
       <div class="form-group">
-      <label class="control-label col-sm-4"></label>
+      <label class="control-label col-sm-4">Pincode</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="pin" placeholder="PIN Code" name="pin">
       </div>
@@ -159,19 +181,6 @@ include ('server.php');
       </div>
       </div>
       
-     
-    <div class="form-group">
-      <label class="control-label col-sm-4" for="email">Email:</label>
-      <div class="col-sm-6">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-4" for="pwd">Password:</label>
-      <div class="col-sm-6">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
-      </div>
-    </div>
     <div class="form-group">        
       <div class="col-sm-offset-4 col-sm-6">
         <div class="checkbox">
@@ -181,7 +190,7 @@ include ('server.php');
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-4 col-sm-6">
-          <a href="http://localhost/MyProjects/formEducationalDetails.php"> <button type="submit" class="btn btn-default" >Next</button></a>
+          <a href="http://localhost/MyProjects/formEducationalDetails.php"> <button type="submit" class="btn btn-default" name = "next">Next</button></a>
       </div>
     </div>
   </form>
