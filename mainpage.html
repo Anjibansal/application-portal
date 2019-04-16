@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="regisHome.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav">
+      <a class="navbar-brand" href="#"><img src="iglogo1.png"/></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mtech</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">BBA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MCA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PhD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MPlan</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Nav-bar END -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="imp-info"
+                data-toggle="tab"
+                href="#info"
+                role="tab"
+                aria-controls="info"
+                aria-selected="true"
+                >Application Form</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="up-docs"
+                data-toggle="tab"
+                href="#docs"
+                role="tab"
+                aria-controls="docs"
+                aria-selected="false"
+                >Upload Documents</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="make-payment"
+                data-toggle="tab"
+                href="#payment"
+                role="tab"
+                aria-controls="payment"
+                aria-selected="false"
+                >Payment</a
+              >
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div
+              class="tab-pane active"
+              id="info"
+              role="tabpanel"
+              aria-labelledby="imp-info"
+            >
+              <div class="container info-container">
+                <div class="info">
+                  <h2 class="topic">
+                    Apply for the following Undergraduate and Postgraduate
+                    Courses
+                  </h2>
+                  <br />
+                  <p>
+                    <b>Select a course to fill its application form.</b>
+                  </p>
+                  <br />
+                </div>
+                <div class="info">
+                  <button class="btn btn-success applybtn">M.Tech.</button>
+                  <button class="btn btn-success applybtn">BBA</button>
+                  <button class="btn btn-success applybtn">MCA</button>
+                  <button class="btn btn-success applybtn">PhD</button>
+                  <button class="btn btn-success applybtn">MPlan</button>
+                </div>
+                <div class="info">
+                  <h2 class="topic">
+                    General Guidelines
+                  </h2>
+                  <br />
+                  <p>
+                    <b
+                      >- some sample instruction <br />- another sample
+                      instruction
+                    </b>
+                  </p>
+                  <br />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tab-pane"
+              id="docs"
+              role="tabpanel"
+              aria-labelledby="up-docs"
+            >
+              <div class="container info-container">
+                <div class="info">
+                  <h2 class="topic">
+                    Upload the following documents
+                  </h2>
+                  <br />
+                  <p>
+                    <b
+                      >NOTE: Please adhere to the format and dimensions of the
+                      documents mentioned.</b
+                    >
+                  </p>
+                  <br />
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane"
+              id="payment"
+              role="tabpanel"
+              aria-labelledby="make-payment"
+            >
+              <div class="container info-container">
+                <div class="info">
+                  <h2 class="topic">
+                    Payment of Registration Fee
+                  </h2>
+                  <br />
+                  <p>
+                    <b>Complete payment for successful registration.</b>
+                  </p>
+                  <br />
+                  <p>
+                    <b>Registration fee : Rs. 500/- for each course</b>
+                  </p>
+                </div>
+
+                <div class="info">
+                  <h2 class="topic">
+                    Choose Payment Method
+                  </h2>
+                  <br />
+                  <p>
+                    <b>Credit Card</b>
+                  </p>
+                  <br />
+                  <p>
+                    <b>Debit Card</b>
+                  </p>
+                  <br />
+                  <p>
+                    <b>Net Banking</b>
+                  </p>
+                </div>
+                <div class="info">
+                  <button class="btn btn-success applybtn">Pay Now</button>
+                  <button class="btn btn-success applybtn">
+                    Cancel Transaction
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

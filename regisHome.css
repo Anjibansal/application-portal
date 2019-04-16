@@ -60,3 +60,8 @@
     font-size: 20px;
 	font-weight: bold;	
 }
+.applybtn{
+	min-width: 120px;
+	margin: 5px;
+	font-size: 18px;
+}
