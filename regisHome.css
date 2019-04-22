@@ -61,7 +61,15 @@
 	font-weight: bold;	
 }
 .applybtn{
-	min-width: 120px;
 	margin: 5px;
 	font-size: 18px;
+}
+
+.flexbuttons{
+	display: flex;
+	justify-content: space-around;
+
+}
+.flexbuttons button{
+	flex-grow: 1;
 }
