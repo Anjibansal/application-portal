@@ -95,13 +95,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="#">Welcome User!</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#">Logout</a>
                 </li>
             </ul>
         </div>
@@ -112,7 +112,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <center><h2 class="topic">Apply for M.Tech.</h2></center>
+                </div>
+                <div class="card">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                         <li role="presentation" class="nav-item">
                             <a class="nav-link active" id="personal-info" data-toggle="tab" href="#personal" role="tab"
                                 aria-controls="personal" aria-selected="true">1: Personal Details</a>
@@ -508,11 +511,11 @@
                                     </div>
                                     <br>
                                     <div class="form-row">
-                                        <div class="form-group col-md-2">
+                                        <div class="form-group col">
                                             <div class="form-group">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck" style="width: 100%">
+                                                    <label class="form-check-label" for="gridCheck">
                                                         I confirm all details.
                                                     </label>
                                                 </div>
@@ -531,43 +534,50 @@
                                 <form class="form-horizontal" action="PayDetails.php" method="post">
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-8">------Note: Please fill the below
-                                            details after the transaction is complete</label>
-                                        <label class="control-label col-sm-8">Take a screenshot of the generated
-                                            successful transaction reciept</label>
-                                        <label class="control-label col-sm-8">The screenshot will be needed for
-                                            upload in the next section-------</label>
+                                        <center>
+                                            <b>
+                                                <label class="control-label col-sm-8">------Note: Please fill the below
+                                                    details after the transaction is complete</label>
+                                                <label class="control-label col-sm-8">Take a screenshot of the generated
+                                                    successful transaction reciept</label>
+                                                <label class="control-label col-sm-8">The screenshot will be needed for
+                                                    upload in the next section-------</label>
+                                            </b>
+                                        </center>
 
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4" for="number">Payment Link:</label>
-                                        <div class="col-sm-6">
-                                            <label class="col-sm-8"><a
+                                        <h5><label class="control-label col-sm-4" for="number">Payment Link:</label>
+                                        </h5>
+                                        <div class="col-sm-12">
+                                            <label class="col-sm-12"><a
                                                     href="www.youcanemptyyourwalletshere.com">www.youcanemptyyourwalletshere.com</a></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4" for="number">Transaction
-                                            Number:</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4" for="number">Transaction
+                                                Number:</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="number" class="form-control" id="number" name="number"
                                                 required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4" for="ref">Transaction
-                                            Reference:</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4" for="ref">Transaction
+                                                Reference:</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="text" class="form-control" id="ref" name="ref">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4" for="tdate">Transaction Date:</label>
-                                        <div class="col-sm-6">
+                                        <h5>
+                                            <label class="control-label col-sm-4" for="tdate">Transaction Date:</label>
+                                        </h5>
+                                        <div class="col-sm-12">
                                             <input type="date" class="form-control" id="tdate" name="tdate">
                                         </div>
                                     </div>
@@ -591,40 +601,45 @@
                                 <form class="form-horizontal" action="Details.php" method="post">
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-8">------Note: Please Upload the screenshot
-                                            of the fee reciept
-                                        </label>
-                                        <label class="control-label col-sm-8">which you took in the previous
-                                            section-------</label>
+                                        <center>
+                                            <b>
+                                                <label class="control-label col-sm-12">------Note: Please Upload the
+                                                    screenshot
+                                                    of the fee reciept
+                                                </label>
+                                                <label class="control-label col-sm-12">which you took in the previous
+                                                    section-------</label>
+                                            </b>
+                                        </center>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4">Upload Photo</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4">Upload Photo</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="file" class="form-control" id="photo"
                                                 placeholder="Upload Image" name="Photo">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4">Upload Signature</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4">Upload Signature</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="file" class="form-control" id="sign" placeholder="Upload Image"
                                                 name="sign">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4">Upload Thumb Impression</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4">Upload Thumb Impression</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="file" class="form-control" id="thumb"
                                                 placeholder="Upload Image" name="thumb">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-4">Upload Fee Reciept</label>
-                                        <div class="col-sm-6">
+                                        <h5><label class="control-label col-sm-4">Upload Fee Reciept</label></h5>
+                                        <div class="col-sm-12">
                                             <input type="file" class="form-control" id="thumb"
                                                 placeholder="Upload Image" name="thumb">
                                         </div>
