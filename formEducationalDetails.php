@@ -141,7 +141,7 @@ include ('server.php');
         <br>
       <div class="form-row">
     <div class="form-group col-md-2">
-        <h4>Gate</h4>
+        <h4>GATE</h4>
     </div>
      <div class="form-check form-check-inline form-group col-md-2">
   <input class="form-check-input" type="radio" name="Gate"  value="option1">
