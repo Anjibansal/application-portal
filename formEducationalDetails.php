@@ -1,6 +1,6 @@
-<?php
+<!--<?php
 include ('server.php');
-?>
+?>-->
 <!doctype html>
 <html >
   <head>
@@ -12,13 +12,46 @@ include ('server.php');
 
     <title>Mtech application form</title>
     <style>
+		input[type=text],input[type=number],select,option {
+		  width: 100%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		  border: 2px solid green;
+		  border-radius: 4px;
+		  outline: none;
+		}
+		input[type=text]:focus{
+			border: 2px solid green;
+			outline: none;
+		}
+		input[type=number]:focus{
+			border: 2px solid green;
+			outline: none;
+		}
+		select:focus{
+			background-color: #00ff00;
+		}
         form{
             margin: 5%;
         }
         h1{
             margin: 5%;  
             text-align: center;
+            background-color: #4CAF50;
         }
+        button[type=button], button[type=submit], input[type=reset] {
+			  background-color: #4CAF50;
+			  border: none;
+			  color: white;
+			  padding: 16px 32px;
+			  text-decoration: none;
+			  margin: 4px 2px;
+			  cursor: pointer;
+		}
+		button[type=submit]:hover{
+			background-color: #005f00;
+    	}
     </style>
   </head>
   <body>
@@ -30,25 +63,30 @@ include ('server.php');
     <div class="form-group">
         <h4>10th Standard Details</h4>
     </div>
-     
   </div>
-        <div class="form-row">
-    <div class="form-group col-md-3">
+
+    <div class="form-row">
+
+    <div class="col-md-3">
       <label for="Board_Tenth">Board</label>
-      <input type="text" class="form-control" name="Board_Tenth" required>
+      <input  type="text" class="form-control" name="Board_Tenth" required>
     </div>
-    <div class="form-group col-md-3">
+
+    <div class="col-md-3">
       <label for="Subject_Tenth">Subjects</label>
       <input type="text" class="form-control" name="Subject_Tenth" required>
     </div>
-    <div class="form-group col-md-3">
+
+    <div class="col-md-3">
       <label for="Year_of_completion_Tenth">Year of graduation</label>
       <input type="text" class="form-control" name="Year_of_completion_Tenth" required>
     </div>
-            <div class="form-group col-md-3">
+
+      <div class="col-md-3">
       <label for="Percentage_Tenth">Percentage</label>
       <input type="number" class="form-control" name="Percentage_Tenth" required>
     </div>
+
   </div>
         
          <div class="form-row">
@@ -133,7 +171,7 @@ include ('server.php');
     </div>
         <div class="form-group col-md-3">
       <label for="Paper">Paper</label>
-      <select name="Paper" class="form-control">
+      <select name="Paper" class="form-control" style="border: 2px solid green;">
         <option selected>Choose...</option>
         <option> ABC </option>
         <option> XYZ </option>
@@ -158,7 +196,7 @@ include ('server.php');
         <div class="form-row">
     <div class="form-group col-md-3">
       <label for="Preference1">Preference 1</label>
-      <select name="Preference1" class="form-control">
+      <select name="Preference1" class="form-control" style="border: 2px solid green;">
         <option selected>Choose...</option>
         <option> ABC </option>
         <option> XYZ </option>
@@ -168,7 +206,7 @@ include ('server.php');
     </div>
              <div class="form-group col-md-3">
       <label for="Preference2">Preference 2</label>
-      <select name="Preference2" class="form-control">
+      <select name="Preference2" class="form-control" style="border: 2px solid green;">
         <option selected>Choose...</option>
         <option> ABC </option>
         <option> XYZ </option>
@@ -178,7 +216,7 @@ include ('server.php');
     </div>
              <div class="form-group col-md-3">
       <label for="Preference3">Preference 3</label>
-      <select name="Preference3" class="form-control">
+      <select name="Preference3" class="form-control" style="border: 2px solid green;">
         <option selected>Choose...</option>
         <option> ABC </option>
         <option> XYZ </option>
@@ -188,7 +226,7 @@ include ('server.php');
     </div>
              <div class="form-group col-md-3">
       <label for="Preference4">Preference 4</label>
-      <select name="Preference4" class="form-control">
+      <select name="Preference4" class="form-control" style="border: 2px solid green;">
         <option selected>Choose...</option>
         <option> ABC </option>
         <option> XYZ </option>
