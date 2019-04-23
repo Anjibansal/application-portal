@@ -52,6 +52,10 @@ include ('server.php');
 		button[type=submit]:hover{
 			background-color: #005f00;
     	}
+      label{
+        font-weight:bolder;
+        text-transform: uppercase;
+      }
     </style>
   </head>
   <body>
@@ -144,11 +148,11 @@ include ('server.php');
         <h4>GATE</h4>
     </div>
      <div class="form-check form-check-inline form-group col-md-2">
-  <input class="form-check-input" type="radio" name="Gate"  value="Yes">
+  <input class="form-check-input" type="radio" name="Gate"  value="option1">
   <label class="form-check-label" for="inlineRadioY">YES</label>
 </div>
 <div class="form-check form-check-inline form-group col-md-3">
-  <input class="form-check-input" type="radio" name="Gate" value="No">
+  <input class="form-check-input" type="radio" name="Gate" value="option2">
   <label class="form-check-label" for="Gate">NO</label>
 </div>
 
@@ -237,8 +241,6 @@ include ('server.php');
     
   </div>
         <br>
-      <div class="form-row">
-    <div class="form-group col-md-2">    
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" name="gridCheck">

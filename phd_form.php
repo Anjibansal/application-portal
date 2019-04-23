@@ -10,7 +10,7 @@ include ('server.php');
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Mtech application form</title>
+    <title>PhD application form</title>
     <style>
 		input[type=text],input[type=number],select,option {
 		  width: 100%;
@@ -52,6 +52,10 @@ include ('server.php');
 		button[type=submit]:hover{
 			background-color: #005f00;
     	}
+      label{
+        font-weight:bolder;
+        text-transform: uppercase;
+      }  
     </style>
   </head>
   <body>
@@ -78,7 +82,7 @@ include ('server.php');
     </div>
 
     <div class="col-md-3">
-      <label for="Year_of_completion_Tenth">Year of graduation</label>
+      <label for="Year_of_completion_Tenth">Year of Passing</label>
       <input type="text" class="form-control" name="Year_of_completion_Tenth" required>
     </div>
 
@@ -105,7 +109,7 @@ include ('server.php');
       <input type="text" class="form-control" name="Subject_Twelfth" required>
     </div>
     <div class="form-group col-md-3">
-      <label for="Year_of_completion_Twelfth">Year of graduation</label>
+      <label for="Year_of_completion_Twelfth">Year of Passing</label>
       <input type="text" class="form-control" name="Year_of_completion_Twelfth" required>
     </div>
             <div class="form-group col-md-3">
@@ -116,7 +120,7 @@ include ('server.php');
         
     <div class="form-row">
     <div class="form-group">
-        <h4>Under Graduate Degree Details</h4>
+        <h4>UnderGraduate Degree Details</h4>
     </div>
      
   </div>
@@ -140,60 +144,65 @@ include ('server.php');
   </div>
         <br>
       <div class="form-row">
-    <div class="form-group col-md-2">
-        <h4>GATE</h4>
-    </div>
-     <div class="form-check form-check-inline form-group col-md-2">
-  <input class="form-check-input" type="radio" name="Gate"  value="Yes">
-  <label class="form-check-label" for="inlineRadioY">YES</label>
-</div>
-<div class="form-check form-check-inline form-group col-md-3">
-  <input class="form-check-input" type="radio" name="Gate" value="No">
-  <label class="form-check-label" for="Gate">NO</label>
-</div>
-
-  </div>   
-    <div class="form-row">
     <div class="form-group">
-        <p>If NO then fill NA</p>
+        <h4>PostGraduate Degree Details</h4>
     </div>
-     
-  </div>  
+    
+  </div>   
  
   <div class="form-row">
     <div class="form-group col-md-3">
-      <label for="RollNo">Roll Number</label>
-      <input type="text" class="form-control" name="RollNo">
+      <label for="University_PG">University</label>
+      <input type="text" class="form-control" name="University_PG" required >
     </div>
-    <div class="form-group col-md-2">
-      <label for="Year">Year</label>
-      <input type="text" class="form-control" name="Year">
+    <div class="form-group col-md-3">
+      <label for="Subject_PG">Degree</label>
+      <input type="text" class="form-control" name="Subject_PG">
     </div>
-        <div class="form-group col-md-3">
-      <label for="Paper">Paper</label>
-      <select name="Paper" class="form-control" style="border: 2px solid green;">
-        <option selected>Choose...</option>
-        <option> ABC </option>
-        <option> XYZ </option>
-        <option> PQR</option>
-      </select>
+    <div class="form-group col-md-3">
+      <label for="Year_of_graduation_PG">Year of graduation</label>
+      <input type="text" class="form-control" name="Year_of_graduation_PG" required>
     </div>
-    <div class="form-group col-md-2">
-      <label for="Score">Score</label>
-      <input type="text" class="form-control" name="Score">
-    </div>
-      <div class="form-group col-md-2">
-      <label for="Rank">Rank</label>
-      <input type="text" class="form-control" name="Rank">
+            <div class="form-group col-md-3">
+      <label for="Percentage_PG">Percentage</label>
+      <input type="number" class="form-control" name="Percentage_PG" required>
     </div>
   </div>
-     <div class="form-row">
+  <div class="form-row">
+    <div class="form-group"><h4>Publications</h4></div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="Noofpublication_conference">No of publication(conference)</label>
+      <input type="text" class="form-control" name="Noofpublication_conference" required >
+    </div>
+    <div class="form-group col-md-3">
+      <label for="Noofpublication_journal">No of publication(Journal)</label>
+      <input type="text" class="form-control" name="Noofpublication_journal">
+    </div>
+  </div>
+<div class="form-row">
     <div class="form-group">
-        <h4>Choose Preference for Course</h4>
+        <h4>Experience</h4>
     </div>
-     
+    
+  </div>   
+ 
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="Experience_organisation">Organisation</label>
+      <input type="text" class="form-control" name="Experience_organisation" required >
+    </div>
+    <div class="form-group col-md-3">
+      <label for="Experience_Duration">Duration</label>
+      <input type="text" class="form-control" name="Experience_Duration">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="Experience_Role">Role and Responsibility</label>
+      <input type="text" class="form-control" name="Experience_Role" required>
+    </div>
   </div>
-        <div class="form-row">
+  <div class="form-row">
     <div class="form-group col-md-3">
       <label for="Preference1">Preference 1</label>
       <select name="Preference1" class="form-control" style="border: 2px solid green;">
@@ -236,9 +245,6 @@ include ('server.php');
     </div>
     
   </div>
-        <br>
-      <div class="form-row">
-    <div class="form-group col-md-2">    
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" name="gridCheck">

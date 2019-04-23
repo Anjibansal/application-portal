@@ -10,7 +10,7 @@ include ('server.php');
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Mtech application form</title>
+    <title>Mplan application form</title>
     <style>
 		input[type=text],input[type=number],select,option {
 		  width: 100%;
@@ -52,6 +52,10 @@ include ('server.php');
 		button[type=submit]:hover{
 			background-color: #005f00;
     	}
+      label{
+        font-weight:bolder;
+        text-transform: uppercase;
+      }  
     </style>
   </head>
   <body>
@@ -78,7 +82,7 @@ include ('server.php');
     </div>
 
     <div class="col-md-3">
-      <label for="Year_of_completion_Tenth">Year of graduation</label>
+      <label for="Year_of_completion_Tenth">Year of Passing</label>
       <input type="text" class="form-control" name="Year_of_completion_Tenth" required>
     </div>
 
@@ -105,7 +109,7 @@ include ('server.php');
       <input type="text" class="form-control" name="Subject_Twelfth" required>
     </div>
     <div class="form-group col-md-3">
-      <label for="Year_of_completion_Twelfth">Year of graduation</label>
+      <label for="Year_of_completion_Twelfth">Year of Passing</label>
       <input type="text" class="form-control" name="Year_of_completion_Twelfth" required>
     </div>
             <div class="form-group col-md-3">
@@ -144,11 +148,11 @@ include ('server.php');
         <h4>GATE</h4>
     </div>
      <div class="form-check form-check-inline form-group col-md-2">
-  <input class="form-check-input" type="radio" name="Gate"  value="Yes">
+  <input class="form-check-input" type="radio" name="Gate"  value="option1">
   <label class="form-check-label" for="inlineRadioY">YES</label>
 </div>
 <div class="form-check form-check-inline form-group col-md-3">
-  <input class="form-check-input" type="radio" name="Gate" value="No">
+  <input class="form-check-input" type="radio" name="Gate" value="option2">
   <label class="form-check-label" for="Gate">NO</label>
 </div>
 
@@ -187,58 +191,8 @@ include ('server.php');
       <input type="text" class="form-control" name="Rank">
     </div>
   </div>
-     <div class="form-row">
-    <div class="form-group">
-        <h4>Choose Preference for Course</h4>
-    </div>
      
-  </div>
-        <div class="form-row">
-    <div class="form-group col-md-3">
-      <label for="Preference1">Preference 1</label>
-      <select name="Preference1" class="form-control" style="border: 2px solid green;">
-        <option selected>Choose...</option>
-        <option> ABC </option>
-        <option> XYZ </option>
-        <option> PQR</option>
-        <option> LMN</option>
-      </select>
-    </div>
-             <div class="form-group col-md-3">
-      <label for="Preference2">Preference 2</label>
-      <select name="Preference2" class="form-control" style="border: 2px solid green;">
-        <option selected>Choose...</option>
-        <option> ABC </option>
-        <option> XYZ </option>
-        <option> PQR</option>
-        <option> LMN</option>
-      </select>
-    </div>
-             <div class="form-group col-md-3">
-      <label for="Preference3">Preference 3</label>
-      <select name="Preference3" class="form-control" style="border: 2px solid green;">
-        <option selected>Choose...</option>
-        <option> ABC </option>
-        <option> XYZ </option>
-        <option> PQR</option>
-        <option> LMN</option>
-      </select>
-    </div>
-             <div class="form-group col-md-3">
-      <label for="Preference4">Preference 4</label>
-      <select name="Preference4" class="form-control" style="border: 2px solid green;">
-        <option selected>Choose...</option>
-        <option> ABC </option>
-        <option> XYZ </option>
-        <option> PQR</option>
-        <option> LMN</option>
-      </select>
-    </div>
-    
-  </div>
-        <br>
-      <div class="form-row">
-    <div class="form-group col-md-2">    
+      
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" name="gridCheck">
