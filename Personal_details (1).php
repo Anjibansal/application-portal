@@ -214,26 +214,7 @@
         <input type="text" class="form-control" id="pin" placeholder="PIN Code" name="pin">
       </div>
       </div>
-        <div class="form-group">
-      <h5><label class="control-label col-sm-4">Upload Photo</label></h5>
-      <div class="col-sm-10">
-        <input type="file" class="form-control" id="photo" placeholder="Upload Image" name="Photo">
-      </div>
-      </div>
-      
-      <div class="form-group">
-      <h5><label class="control-label col-sm-4">Upload Signature</label></h5>
-      <div class="col-sm-10">
-        <input type="file" class="form-control" id="sign" placeholder="Upload Image" name="sign">
-      </div>
-      </div>
-      
-      <div class="form-group">
-      <h5><label class="control-label col-sm-4">Upload Thumb Impression</label></h5>
-      <div class="col-sm-10">
-        <input type="file" class="form-control" id="thumb" placeholder="Upload Image" name="thumb">
-      </div>
-      </div>
+    
       
     <div class="form-group">        
       <div class="col-sm-offset-4 col-sm-6">
