@@ -312,9 +312,13 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-4 col-sm-6">
-                                            <a href="http://localhost/MyProjects/formEducationalDetails.php"> <button
+                                            <!-- <a id="simulate" class="btn btn-default" name="next" href="#mtabs_wrapper#mtabs_content_container#education">Next</a>
+                                             --><!-- <a href="#education"> <button
                                                     type="submit" class="btn btn-default" name="next">Next</button></a>
-                                        </div>
+                                         -->
+                                            <a  data-toggle="tab" class="btn btn-success" name="next" href="#education" role="tab"
+                                aria-controls="education" aria-selected="false">Next</a> 
+                                         </div>
                                     </div>
                                 </form>
                             </div>
@@ -390,7 +394,9 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary" name="submit">Next</button>
+                                    <a  data-toggle="tab" class="btn btn-success" name="next" href="#payment" role="tab"
+                                aria-controls="payment" aria-selected="false">Next</a>
+                                    <!-- <a href="#payment" class="btn btn-primary" name="submit">Next</a> -->
 
                                 </form>
                             </div>
@@ -453,9 +459,10 @@
                                     <div class="form-group">
                                         <div class="col-sm-offset-4 col-sm-6">
 
-                                            <a href="http://localhost/MyProjects/PayDetails.php"> <button type="submit"
-                                                    class="btn btn-default">SUBMIT</button></a>
-
+                                            <!-- <a href="http://localhost/MyProjects/PayDetails.php"> <button type="submit"
+                                                    class="btn btn-default">SUBMIT</button></a>-->
+                                            <a  data-toggle="tab" class="btn btn-success" name="next" href="#docs" role="tab"
+                                aria-controls="docs" aria-selected="false">Next</a>
                                         </div>
                                     </div>
                                 </form>
@@ -532,7 +539,38 @@
             </div>
         </div>
     </div>
+    <style type="text/css">
+        
+    </style>
+<script type="text/javascript">
+    $(document).ready(function(){
+    //  When user clicks on tab, this code will be executed
+    $("#mtabs li").click(function() {
+        //  First remove class "active" from currently active tab
+        $("#mtabs li").removeClass('active');
+ 
+        //  Now add class "active" to the selected/clicked tab
+       $(this).addClass("active");
+ 
+        //  Hide all tab content
+        $(".mtab_content").hide();
+ 
+        //  Here we get the href value of the selected tab
+        var selected_tab = $(this).find("a").attr("href");
+ 
+        //  Show the selected tab content
+        $(selected_tab).fadeIn();
+ 
+        //  At the end, we add return false so that the click on the link is not executed
+        return false;
+    });
+  $("#simulate").click(function(){
+    $('a[rel="education"]').trigger("click");
+  });
+});
 
+</script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

@@ -1,97 +1,87 @@
 <?php
-
 session_start();
-      $dbhost = "localhost";
-      $dbuser = "root";
-      $dbpass = "1234";
-      $db = "educationdetails";
-      
-      $conn = new mysqli($dbhost,$dbuser,$dbpass,$db);
-              //or die("Connection failed: %s\n".$conn->error);
-              if(!$conn)
-            {
-                die("Connection failed: ".  mysqli_connect_error());
-            }
- 
- 
- ini_set('display_errors',1);
- ini_set('display_startup_errors',1);
- error_reporting(E_ALL);
-//initialising variables
 
-//$applicationNo = 0;
-//$Board_Tenth = "";
-//$Subject_Tenth = "";
-//$Year_of_completion_Tenth = "";
-//$Percentage_Tenth = 0;
-//
-//$Board_Twelfth = "";
-//$Subject_Twelfth = "";
-//$Year_of_completion_Twelfth = "";
-//$Percentage_Twelfth = 0;
-//
-//$University_UG = "";
-//$Subject_UG = "";
-//$Year_of_graduation_UG = "";
-//$Percentage_UG = 0;
-//
-//$Gate = 0;
+// initializing variables
+$Name = "";
+$Email    = "";
+$ContactNo ="";
+$errors = array(); 
 
-//$errors = array();
-if(isset($_POST['submit']))
-{
-   
-//Register users
-   
-$Board_Tenth = mysqli_real_escape_string($conn, $_POST['Board_Tenth']);
-$Subject_Tenth = mysqli_real_escape_string($conn, $_POST['Subject_Tenth']);
-$Year_of_completion_Tenth  = mysqli_real_escape_string($conn, $_POST['Year_of_completion_Tenth']);
-$Percentage_Tenth = mysqli_real_escape_string($conn, $_POST['Percentage_Tenth']);
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'application_portal');
 
-$Board_Twelfth = mysqli_real_escape_string($conn, $_POST['Board_Twelfth']);
-$Subject_Twelfth = mysqli_real_escape_string($conn, $_POST['Subject_Twelfth']);
-$Year_of_completion_Twelfth  = mysqli_real_escape_string($conn, $_POST['Year_of_completion_Twelfth']);
-$Percentage_Twelfth = mysqli_real_escape_string($conn, $_POST['Percentage_Twelfth']);
+// REGISTER USER
+if (isset($_POST['reg_user'])) {
+  // receive all input values from the form
+  $Name = mysqli_real_escape_string($db, $_POST['Name']);
+  $Email = mysqli_real_escape_string($db, $_POST['Email']);
+  $ContactNo = mysqli_real_escape_string($db, $_POST['ContactNo']);
+  $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+  $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
-$University_UG = mysqli_real_escape_string($conn, $_POST['University_UG']);
-$Subject_UG = mysqli_real_escape_string($conn, $_POST['Subject_UG']);
-$Year_of_graduation_UG  = mysqli_real_escape_string($conn, $_POST['Year_of_graduation_UG']);
-$Percentage_UG = mysqli_real_escape_string($conn, $_POST['Percentage_UG']);
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($Name)) { array_push($errors, "Name is required"); }
+  if (empty($Email)) { array_push($errors, "Email is required"); }
+  if (empty($ContactNo)) { array_push($errors, "Contact No. is required"); }
+  if (empty($password_1)) { array_push($errors, "Password is required"); }
+  if ($password_1 != $password_2) {
+	array_push($errors, "The two passwords do not match");
+  }
 
-$Gate = mysqli_real_escape_string($conn, $_POST['Gate']);
-$RollNo = mysqli_real_escape_string($conn, $_POST['RollNo']);
-$Year = mysqli_real_escape_string($conn, $_POST['Year']);
-$Paper = mysqli_real_escape_string($conn, $_POST['Paper']);
-$Score = mysqli_real_escape_string($conn, $_POST['Score']);
-$Rank = mysqli_real_escape_string($conn, $_POST['Rank']);
-$Preference1 = mysqli_real_escape_string($conn, $_POST['Preference1']);
-$Preference2 = mysqli_real_escape_string($conn, $_POST['Preference2']);
-$Preference3 = mysqli_real_escape_string($conn, $_POST['Preference3']);
-$Preference4 = mysqli_real_escape_string($conn, $_POST['Preference4']);
-//echo $Board_Tenth;
-//echo $Subject_Tenth;
-//echo $Year_of_completion_Tenth;
-//echo $Percentage_Tenth;
-$conn->autocommit(FALSE);
- 
-$conn->query("INSERT INTO educational_details(Board_Tenth,Subject_Tenth,Year_of_completion_Tenth,Percentage_Tenth,Board_Twelfth,Subject_Twelfth,Year_of_completion_Twelfth,Percentage_Twelfth,University_UG,Subject_UG,Year_of_graduation_UG,Percentage_UG,Gate,RollNo,Year,Paper,Score,Rank,Preference1,Preference2,Preference3,Preference4)
-VALUES('$Board_Tenth','$Subject_Tenth','$Year_of_completion_Tenth','$Percentage_Tenth','$Board_Twelfth','$Subject_Twelfth','$Year_of_completion_Twelfth','$Percentage_Twelfth','$University_UG','$Subject_UG','$Year_of_graduation_UG','$Percentage_UG','$Gate','$RollNo','$Year','$Paper','$Score','$Rank','$Preference1','$Preference2','$Preference3','$Preference4')");
-
-$res = $conn->query("START TRANSACTION");
-$conn->commit();
-if($res)
- {
-echo  "<script>alert('Data Saved')</script>";
- }
- else
- {
- echo "<script>alert('Data not saved')</script>";
+  // first check the database to make sure 
+  // a user does not already exist with the same username and/or email
+  $user_check_query = "SELECT * FROM registrationdetails WHERE Email='$Email' LIMIT 1";
+  $result = mysqli_query($db, $user_check_query);
+  $user = mysqli_fetch_assoc($result);
   
- mysqli_error($conn);
- 
-  //echo phpinfo();
- }
- 
+  if ($user) { // if user exists
+    // if ($user['Name'] === $Name) {
+    //   array_push($errors, "Username already exists");
+    // }
+
+    if ($user['Email'] === $Email) {
+      array_push($errors, "email already exists");
+    }
+  }
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+  	$Password = md5($password_1);//encrypt the password before saving in the database
+
+  	$query = "INSERT INTO registrationdetails (Name, Email, ContactNo, Password) 
+  			  VALUES('$Name', '$Email', '$ContactNo', '$Password')";
+  	mysqli_query($db, $query);
+  	$_SESSION['Email'] = $Email;
+  	$_SESSION['success'] = "You are now logged in";
+  	header('location: mainpage.html');
+  }
 }
-//mysqli_close($conn);
+
+//Login
+if (isset($_POST['login_user'])) {
+  $Email = mysqli_real_escape_string($db, $_POST['Email']);
+  $Password = mysqli_real_escape_string($db, $_POST['Password']);
+
+  if (empty($Email)) {
+    array_push($errors, "Email is required");
+  }
+  if (empty($Password)) {
+    array_push($errors, "Password is required");
+  }
+
+  if (count($errors) == 0) {
+    $Password = md5($Password);
+    $query = "SELECT * FROM registrationdetails WHERE Email='$Email' AND Password='$Password'";
+    $results = mysqli_query($db, $query);
+    if (mysqli_num_rows($results) == 1) {
+      $_SESSION['Email'] = $Email;
+      $_SESSION['success'] = "You are now logged in";
+      header('location: mainpage.html');
+    }else {
+      array_push($errors, "Wrong email/password combination");
+    }
+  }
+}
+
 ?>
